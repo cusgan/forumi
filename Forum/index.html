@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>FORUMI</title>
+        <link rel="icon" type="image/x-icon" href="kuromi logo.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800;900&display=swap" rel="stylesheet">    
+    </head>
+    <body>
+      <!-- Original Nav bar
+      <nav>
+        <ul>
+          <li style="padding-right: 40%;"><h2 style="display:inline;"><b>FORUMI</b></h2></li>
+          <li style="padding-right: 40%;"><img id="logo" src="kuromi logo.png"></li>
+        </ul> 
+      </nav> 
+      -->
+      <ul class="nav justify-content-around align-items-center">
+        <li class="nav-item" style="position:absolute; left:2rem; margin:0px; margin-bottom:0.8rem;">
+          <h1 style="font-size: 4.5rem !important;
+          font-weight: bolder;">FORUMi</h1>
+        </li>
+        <li class="nav-item"  >
+            <img src="kuromi logo.png" 
+            style="margin-bottom:-0.4rem; margin-top:-1rem; 
+            width: 6rem; height: 6rem;">
+        </li>
+        <li class="nav-item d-flex align-items-center" style="position: absolute; padding:0px; height:100%; right:0px;width: 27rem; margin:0px;">
+          <div class="row d-flex align-items-center no-shadow row" id="showSidebar" style="height:100%; flex-grow: 1;">
+            <img src="icons/1.png" class="align-self-center"
+            style="border-radius: 50%; background-color: white; border: 3px solid rgb(35, 24, 22); margin-left:1rem;
+            width: 5rem; height: 5rem; margin-right: 1.5rem;"
+            id="userPFP">
+            <p id="usernameDisplay" style="font-size: 1.8rem; margin:0px; user-select: none ;
+            width:65%; text-overflow: ellipsis !important; overflow:hidden; white-space: nowrap;">  Login / Sign Up </p>
+          </div> 
+        </li>
+        <div class="loginbox" class="form-group">
+          <div class="row no-shadow content">
+            <div class="col no-shadow">
+              <label for=""><h4>Username</h4></label>
+              <input type="text" name="" id="first" class="form-control" placeholder="" aria-describedby="helpId"  tabindex="-1">
+              <label for=""><h4>Password</h4></label>
+              <input type="password" name="" class="form-control" placeholder="" aria-describedby="helpId"  tabindex="-1">      
+            </div></div>
+          <div class="whiteBottom">
+            <button type="button" class="loginButton" id="login"  tabindex="-1">Log In <i class="fa fa-sign-in"   aria-hidden="true"></i>
+            </button>
+            <button type="button" class="loginButton" id="signup" tabindex="-1">Sign Up<i class="fa fa-user-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </ul>
+        
+      <img id="makePostIcon" src="hehe.png">
+
+      <div class="no-shadow" id="darken">
+        <div class="makepost form-group">
+          <textarea id="newPost" class="form-control" placeholder="What's on your Kuromind?" aria-describedby="helpId"></textarea>
+          <br>
+          <button type="button" class="" id="closeButton">Close<i class="fa fa-close"></i></button>
+          <button type="button" class="postButton" id="addPost">Post<i class="fa fa-pencil-square" aria-hidden="true"></i></button>
+        </div>
+      </div>
+
+      <div class="postcol">
+        <div class="card-header">
+          <h2>Posts</h2>
+        </div>
+        <div class="postContainer">
+          <div class="content">
+              <div class="no-shadow row" style="margin: 1% 0 0 1% !important;">
+                <img src="icons/${ic}.png" style="width:5rem;height:5rem;background-color: white;border: 3px solid rgb(35, 24, 22);border-radius: 50%;">
+                <div class="no-shadow col" style="margin-top: -2%;">
+                  <h3>${user}</h3>
+                  <small id="helpId" class="form-text text-muted">${date}</small>
+                </div>
+                <button type="button" id="delete" class="del${delid} delbtn">
+                  <p style="display:none;">${postid}</p>
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+              </div>
+            <br><p>${post}</p><br>
+          </div>
+          <div class="whiteBottom" style="margin-top: 0;">
+            <button class="commentButton seeCom">Comments
+              <p style="display:none">${postid}</p>
+              <i class="fa fa-comments" aria-hidden="true"></i>
+            </button>
+            <button class="commentButton writeCom">Write a Comment
+              <p style="display:none">${postid}</p>
+              <i class="fa fa-commenting" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        <div class="replyContainer ya">
+          <div class="content no-shadow">
+            
+            <div class="no-shadow row" style="margin: 1% 1% 0 1% !important;">
+              <img class="theIcon" src="icons/${ic}.png" style="width:5rem;height:5rem;background-color: white;border: 3px solid rgb(35, 24, 22);border-radius: 50%;">
+              <div class="no-shadow col" style="margin-top: -2%;">
+                <h3>${user}</h3>
+                <small id="helpId" class="form-text text-muted">${date}</small>
+                <br>
+              </div>
+              <button type="button" id="deleteReply" class="del${delid} delbtn">
+                <p style="display:none;">${postid}</p>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+            <p>${reply}</p>
+            <br>
+          </div>
+        </div>
+        <div class="writeComment xa">         
+            <textarea rows="1" id="newComment" class="form-control replytext${postid}" placeholder="What's on your Kuromind?" aria-describedby="helpId" ></textarea>
+            <br>
+            <button type="button" class="postButton">Comment
+              <p style="display:none">${postid}</p>
+              <i class="fa fa-pencil-square" aria-hidden="true"></i>
+            </button>          
+        </div>
+      </div>
+
+      <div class="no-shadow d-flex justify-content-around align-items-center" id="pagination">
+        <button type="button" class="pageButton" id="prev" style="float:left">
+          <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+          Previous Page
+        </button>
+        <input type="text" id="page" style="width:10%" placeholder="Page No." style="float:center">
+        <button type="button" class="pageButton" id="next" style="float: right;">
+          Next Page
+          <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <footer><p>2023 &copy Bascug, Felisa Melanie Fay</p></footer>
+    </body>
+</html>
