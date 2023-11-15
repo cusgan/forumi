@@ -97,13 +97,15 @@ $(function() {
                             date = convertDate(p.reply[i].date);
                             delid = p.reply[i].uid;
                             ic=delid%32;
-                            postrid = p.reply[i].id;
+                            let postrid = p.reply[i].id;
                             $(".postcol").append(eval('`' + replies.replace("ya","replies"+postid) + '`'));
                         }
                     } catch {
                         user = "No Comments";
                         reply = "";
                         date = "";
+                        
+                        let postrid = "lol";
                         $(".postcol").append(eval('`' + replies.replace("ya","replies"+postid) + '`'));
                         $(".replies"+postid).children("div").children("div").children("img").remove();
                         $(".replies"+postid).children("div").children("div").children("button").remove();
